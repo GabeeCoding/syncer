@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>syncer gallery</title>
+		<style>
+			body {
+				background-color: black;
+				color: white;
+				font-family: 'Courier New', Courier, monospace;
+			}
+
+			#grid {
+				background-color: white;
+				width: 100%;
+			}
+
+			.item {
+				display: inline-block;
+				margin: 11px;
+			}
+
+			p {
+				color: black;
+				margin: 0;
+				text-align: center;
+			}
+
+			img {
+				max-width: 400px;
+				max-height: 400px;
+			}
+
+			video {
+				max-width: 1000px;
+				max-height: 1000px;
+			}
+
+			a {
+				display: block;
+				margin: 15px 0;
+				color: cyan;
+				font-size: 28px;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>syncer gallery</h1>
+		<a href="/">go home</a>
+		<div id="grid">{{ html | safe }}</div>
+		<br>
+		<footer><i>this is syncer version {{ version }}</i></footer>
+	</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>syncer</title>
+		<style>
+			.f {
+				color:cyan
+			}
+
+			.d {
+				color: yellow
+			}
+
+			body {
+				background-color: black;
+				color:white;
+				font-family: 'Courier New', Courier, monospace;
+			}
+
+			.galleryLink {
+				display: block;
+				margin: 15px 0;
+				color: cyan;
+				font-size: 22px;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>syncer</h1>
+		<a href="/gallery" class="galleryLink">go to gallery</a>
+		<h2>file list</h2>
+		<ul>
+			{{ files | safe }}
+			{{ dirsOmmitedElement | safe }}
+		</ul>
+		<h2>upload stuff</h2>
+		<form action="/upload" method="post" enctype="multipart/form-data">
+			<input type="file" name="files" multiple>
+			<input type="submit" value="Upload">
+		</form>
+		<br>
+		<footer><i>this is syncer version {{ version }}</i></footer>
+	</body>
+</html>
